@@ -1,0 +1,75 @@
+/* Typewriter Effect Styles */
+.typewriter {
+    display: inline-block;
+}
+
+.typewriter__words {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.typewriter__word {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.typewriter__cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-normal);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Accent color for specific words */
+.typewriter__word--accent {
+    color: var(--color-primary);
+    background: linear-gradient(90deg,
+            var(--color-primary),
+            var(--color-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.typewriter__word--highlight {
+    color: var(--color-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .typewriter__words {
+        gap: 0.35rem;
+    }
+}
