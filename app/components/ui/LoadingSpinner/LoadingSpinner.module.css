@@ -1,0 +1,101 @@
+/* Loading Overlay */
+.loading__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.loading__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nested Spinner */
+.spinner__outer {
+    width: 80px;
+    height: 80px;
+    border: 4px solid transparent;
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner__inner {
+    width: 64px;
+    height: 64px;
+    border: 4px solid transparent;
+    border-top-color: var(--color-accent-saffron);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Content Visibility */
+.content__hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.content__visible {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Animations */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .spinner__outer {
+        width: 60px;
+        height: 60px;
+    }
+
+    .spinner__inner {
+        width: 48px;
+        height: 48px;
+    }
+}

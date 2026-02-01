@@ -1,0 +1,432 @@
+/* ============================================
+   JanSaarthi Color System
+   Civic + Legal + AI Platform Theme
+   Deep Blue + Off-White + Saffron Accent
+   ============================================ */
+
+/* ============================================
+   Light Theme Colors (Default)
+   ============================================ */
+:root {
+    /* ===== Primary Colors (Trust & Authority) ===== */
+
+    /* Deep Blue - Used for navbar, headings, buttons, footer */
+    --primary: #0F2A44;
+    --primary-dark: #0A1D30;
+    --primary-light: #1A3A5C;
+    --primary-foreground: #FFFFFF;
+
+    /* ===== Background Colors (Clean & Calm) ===== */
+
+    /* Soft Off-White - Page backgrounds, cards, dashboard */
+    --background: #F8FAFC;
+    --background-alt: #F1F5F9;
+    --foreground: #1F2933;
+
+    /* ===== Card & Popover ===== */
+    --card: #FFFFFF;
+    --card-foreground: #1F2933;
+    --popover: #FFFFFF;
+    --popover-foreground: #1F2933;
+
+    /* ===== Secondary Accent (Action & India Context) ===== */
+
+    /* Muted Saffron - CTAs, highlights, status indicators */
+    --accent: #E67E22;
+    --accent-foreground: #FFFFFF;
+    --accent-light: #F39C12;
+    --accent-dark: #D35400;
+
+    /* ===== Secondary Colors ===== */
+    --secondary: #E2E8F0;
+    --secondary-foreground: #1F2933;
+
+    /* ===== Muted Colors ===== */
+    --muted: #F1F5F9;
+    --muted-foreground: #6B7280;
+
+    /* ===== Semantic Colors ===== */
+
+    /* Success - Eligible status */
+    --success: #2E7D32;
+    --success-foreground: #FFFFFF;
+    --success-light: #4CAF50;
+
+    /* Warning - Possibly Eligible */
+    --warning: #F59E0B;
+    --warning-foreground: #1F2933;
+    --warning-light: #FCD34D;
+
+    /* Destructive/Error - Rejected / Not Eligible */
+    --destructive: #C62828;
+    --destructive-foreground: #FFFFFF;
+    --error: #C62828;
+    --error-foreground: #FFFFFF;
+
+    /* Info */
+    --info: #0F2A44;
+    --info-foreground: #FFFFFF;
+
+    /* ===== Neutral Text Colors ===== */
+    --text-primary: #1F2933;
+    --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
+    --text-inverse: #FFFFFF;
+
+    /* ===== UI Elements ===== */
+
+    /* Borders & Inputs */
+    --border: #E2E8F0;
+    --border-light: #F1F5F9;
+    --input: #E2E8F0;
+    --ring: #0F2A44;
+
+    /* ===== Indian Civic Colors ===== */
+    --saffron: #E67E22;
+    --green: #2E7D32;
+    --navy: #0F2A44;
+    --ashoka-chakra: #0F2A44;
+
+    /* ===== Chart Colors ===== */
+    --chart-1: #0F2A44;
+    /* Deep Blue */
+    --chart-2: #E67E22;
+    /* Saffron */
+    --chart-3: #2E7D32;
+    /* Green */
+    --chart-4: #F59E0B;
+    /* Warning */
+    --chart-5: #6B7280;
+    /* Gray */
+
+    /* ===== Sidebar Colors ===== */
+    --sidebar: #0F2A44;
+    --sidebar-foreground: #FFFFFF;
+    --sidebar-primary: #E67E22;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #1A3A5C;
+    --sidebar-accent-foreground: #FFFFFF;
+    --sidebar-border: #1A3A5C;
+    --sidebar-ring: #E67E22;
+
+    /* ===== Additional Utility Colors ===== */
+    --overlay: rgba(15, 42, 68, 0.5);
+    --overlay-light: rgba(255, 255, 255, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(226, 232, 240, 0.5);
+
+    /* ===== Status Colors ===== */
+    --status-eligible: #2E7D32;
+    --status-possibly-eligible: #F59E0B;
+    --status-not-eligible: #C62828;
+    --status-pending: #6B7280;
+    --status-approved: #2E7D32;
+    --status-rejected: #C62828;
+
+    /* ===== Legacy Color Variables (Backward Compatibility) ===== */
+    /* These ensure old CSS modules continue to work */
+    --color-primary: var(--primary);
+    --color-primary-dark: var(--primary-dark);
+    --color-primary-light: var(--primary-light);
+    --color-background: var(--background);
+    --color-background-alt: var(--background-alt);
+    --color-background-dark: var(--primary);
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-text-inverse: var(--text-inverse);
+    --color-border: var(--border);
+    --color-border-light: var(--border-light);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-error: var(--error);
+    --color-info: var(--info);
+    --color-accent-saffron: var(--saffron);
+    --color-accent-green: var(--green);
+    --color-accent-white: #FFFFFF;
+}
+
+/* ============================================
+   Dark Theme Colors
+   ============================================ */
+.dark {
+    /* ===== Primary Colors ===== */
+    --primary: #3B82F6;
+    --primary-dark: #2563EB;
+    --primary-light: #60A5FA;
+    --primary-foreground: #FFFFFF;
+
+    /* ===== Background Colors ===== */
+    --background: #0A1628;
+    --background-alt: #1F2933;
+    --foreground: #F8FAFC;
+
+    /* ===== Card & Popover ===== */
+    --card: #1F2933;
+    --card-foreground: #F8FAFC;
+    --popover: #1F2933;
+    --popover-foreground: #F8FAFC;
+
+    /* ===== Secondary Accent ===== */
+    --accent: #F39C12;
+    --accent-foreground: #0A1628;
+    --accent-light: #F59E0B;
+    --accent-dark: #E67E22;
+
+    /* ===== Secondary Colors ===== */
+    --secondary: #334155;
+    --secondary-foreground: #F8FAFC;
+
+    /* ===== Muted Colors ===== */
+    --muted: #1E293B;
+    --muted-foreground: #94A3B8;
+
+    /* ===== Semantic Colors ===== */
+    --success: #4CAF50;
+    --success-foreground: #FFFFFF;
+    --success-light: #66BB6A;
+
+    --warning: #FCD34D;
+    --warning-foreground: #0A1628;
+    --warning-light: #FDE68A;
+
+    --destructive: #EF4444;
+    --destructive-foreground: #FFFFFF;
+    --error: #EF4444;
+    --error-foreground: #FFFFFF;
+
+    --info: #3B82F6;
+    --info-foreground: #FFFFFF;
+
+    /* ===== Neutral Text Colors ===== */
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --text-inverse: #0A1628;
+
+    /* ===== UI Elements ===== */
+    --border: #334155;
+    --border-light: #1E293B;
+    --input: #334155;
+    --ring: #3B82F6;
+
+    /* ===== Indian Civic Colors (Adjusted for Dark Mode) ===== */
+    --saffron: #F39C12;
+    --green: #4CAF50;
+    --navy: #3B82F6;
+    --ashoka-chakra: #3B82F6;
+
+    /* ===== Chart Colors ===== */
+    --chart-1: #3B82F6;
+    --chart-2: #F39C12;
+    --chart-3: #4CAF50;
+    --chart-4: #FCD34D;
+    --chart-5: #94A3B8;
+
+    /* ===== Sidebar Colors ===== */
+    --sidebar: #0F172A;
+    --sidebar-foreground: #F8FAFC;
+    --sidebar-primary: #F39C12;
+    --sidebar-primary-foreground: #0A1628;
+    --sidebar-accent: #1E293B;
+    --sidebar-accent-foreground: #F8FAFC;
+    --sidebar-border: #1E293B;
+    --sidebar-ring: #F39C12;
+
+    /* ===== Additional Utility Colors ===== */
+    --overlay: rgba(10, 22, 40, 0.7);
+    --overlay-light: rgba(255, 255, 255, 0.2);
+    --glass-bg: rgba(31, 41, 51, 0.8);
+    --glass-border: rgba(51, 65, 85, 0.5);
+
+    /* ===== Status Colors ===== */
+    --status-eligible: #4CAF50;
+    --status-possibly-eligible: #FCD34D;
+    --status-not-eligible: #EF4444;
+    --status-pending: #94A3B8;
+    --status-approved: #4CAF50;
+    --status-rejected: #EF4444;
+}
+
+/* ============================================
+   Color Utility Classes
+   ============================================ */
+
+/* Background Colors */
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-accent {
+    background-color: var(--accent);
+}
+
+.bg-success {
+    background-color: var(--success);
+}
+
+.bg-warning {
+    background-color: var(--warning);
+}
+
+.bg-error {
+    background-color: var(--error);
+}
+
+.bg-saffron {
+    background-color: var(--saffron);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-navy {
+    background-color: var(--navy);
+}
+
+/* Text Colors */
+.text-primary {
+    color: var(--primary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.text-success {
+    color: var(--success);
+}
+
+.text-warning {
+    color: var(--warning);
+}
+
+.text-error {
+    color: var(--error);
+}
+
+.text-saffron {
+    color: var(--saffron);
+}
+
+.text-green {
+    color: var(--green);
+}
+
+.text-navy {
+    color: var(--navy);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* Border Colors */
+.border-primary {
+    border-color: var(--primary);
+}
+
+.border-accent {
+    border-color: var(--accent);
+}
+
+.border-success {
+    border-color: var(--success);
+}
+
+.border-warning {
+    border-color: var(--warning);
+}
+
+.border-error {
+    border-color: var(--error);
+}
+
+.border-saffron {
+    border-color: var(--saffron);
+}
+
+.border-green {
+    border-color: var(--green);
+}
+
+.border-navy {
+    border-color: var(--navy);
+}
+
+/* Status Classes */
+.status-eligible {
+    background-color: var(--status-eligible);
+    color: white;
+}
+
+.status-possibly-eligible {
+    background-color: var(--status-possibly-eligible);
+    color: var(--text-primary);
+}
+
+.status-not-eligible {
+    background-color: var(--status-not-eligible);
+    color: white;
+}
+
+.status-pending {
+    background-color: var(--status-pending);
+    color: white;
+}
+
+/* Gradient Backgrounds */
+.bg-civic-gradient {
+    background: linear-gradient(135deg, var(--saffron), var(--green));
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+.bg-hero-gradient {
+    background: linear-gradient(180deg, var(--background) 0%, var(--background-alt) 100%);
+}
+
+/* Glassmorphism */
+.glass-effect {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Button Variants */
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-dark);
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: var(--success-foreground);
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    color: var(--warning-foreground);
+}
+
+.btn-error {
+    background-color: var(--error);
+    color: var(--error-foreground);
+}
