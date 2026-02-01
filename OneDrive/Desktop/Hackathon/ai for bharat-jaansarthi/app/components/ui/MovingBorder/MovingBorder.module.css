@@ -1,0 +1,66 @@
+/* Moving Border Button */
+.moving__border__button {
+    position: relative;
+    background: transparent;
+    padding: 2px;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.moving__border__button:hover {
+    transform: translateY(-2px);
+}
+
+/* Animated Border */
+.moving__border {
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg,
+            var(--color-primary),
+            var(--color-accent-saffron),
+            var(--color-accent-green),
+            var(--color-primary));
+    animation: rotateBorder 3s linear infinite;
+    border-radius: inherit;
+}
+
+/* Button Content */
+.button__content {
+    position: relative;
+    z-index: 1;
+    background: var(--color-background);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    transition: all var(--transition-base);
+}
+
+.moving__border__button:hover .button__content {
+    background: var(--color-background-alt);
+}
+
+/* Animation */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .button__content {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-size-xs);
+    }
+}
