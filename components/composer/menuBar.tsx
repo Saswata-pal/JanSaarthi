@@ -39,12 +39,6 @@ const MenuBar = ({ editor }: { editor: any }) => {
     setIsLinkModalOpen(false);
   }, [editor, urlInput]);
   
-  const removeLink = useCallback(() => {
-    if (!editor) return;
-    editor.chain().focus().extendMarkRange('link').unsetLink().run();
-    setIsLinkModalOpen(false);
-  }, [editor]);
-  
   if (!editor) return null;
 
   const ToolbarButton = ({ 
@@ -58,8 +52,8 @@ const MenuBar = ({ editor }: { editor: any }) => {
       className={`
         flex items-center justify-center rounded-md h-8 w-8 shrink-0 transition-all duration-200
         ${isActive 
-          ? 'text-blue-600 bg-blue-100 shadow-sm' 
-          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}
+          ? 'text-zinc-900 bg-zinc-200 shadow-inner' 
+          : 'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900'}
         ${disabled ? 'opacity-30 cursor-not-allowed' : ''}
       `}
     >
@@ -67,15 +61,14 @@ const MenuBar = ({ editor }: { editor: any }) => {
     </button>
   );
 
-  const Separator = () => <div className="w-px h-5 bg-slate-200 mx-1 shrink-0" />;
-  const iconSize = 18;
+  const Separator = () => <div className="w-px h-4 bg-zinc-200 mx-2 shrink-0 self-center" />;
+  const iconSize = 16;
 
   return (
     <>
       <div className="
-        fixed -top-2 left-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200 
-        px-3 py-2 w-full
-        flex items-center gap-1
+        w-full bg-white/50
+        flex items-center gap-0.5
         overflow-x-auto flex-nowrap
         md:flex-wrap md:overflow-visible md:h-auto
         [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
@@ -150,7 +143,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
             variant="ghost" 
             size="sm" 
             onClick={() => window.print()} 
-            className="text-slate-500 hover:text-slate-900 ml-auto md:ml-0 flex items-center gap-2 h-8"
+            className="text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 ml-auto md:ml-0 flex items-center gap-2 h-8 rounded-md"
         >
             <Printer size={16} />
             <span className="text-xs font-medium hidden sm:inline">Print</span>
@@ -170,11 +163,12 @@ const MenuBar = ({ editor }: { editor: any }) => {
               placeholder="https://example.com"
               onKeyDown={(e) => { if(e.key === 'Enter') saveLink(); }}
               autoFocus
+              className="focus-visible:ring-zinc-900"
             />
           </div>
           <DialogFooter className="flex-row justify-end space-x-2">
-            <Button variant="outline" size="sm" onClick={() => setIsLinkModalOpen(false)}>Cancel</Button>
-            <Button size="sm" onClick={saveLink}>Save</Button>
+            <Button variant="ghost" size="sm" onClick={() => setIsLinkModalOpen(false)}>Cancel</Button>
+            <Button size="sm" className="bg-zinc-900 text-white hover:bg-zinc-800" onClick={saveLink}>Save</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
