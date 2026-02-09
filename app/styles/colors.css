@@ -1,24 +1,11 @@
-/* ============================================
-   JanSaarthi Color System
-   Civic + Legal + AI Platform Theme
-   Deep Blue + Off-White + Saffron Accent
-   ============================================ */
 
-/* ============================================
-   Light Theme Colors (Default)
-   ============================================ */
 :root {
-    /* ===== Primary Colors (Trust & Authority) ===== */
 
-    /* Deep Blue - Used for navbar, headings, buttons, footer */
     --primary: #0F2A44;
     --primary-dark: #0A1D30;
     --primary-light: #1A3A5C;
     --primary-foreground: #FFFFFF;
 
-    /* ===== Background Colors (Clean & Calm) ===== */
-
-    /* Soft Off-White - Page backgrounds, cards, dashboard */
     --background: #F8FAFC;
     --background-alt: #F1F5F9;
     --foreground: #1F2933;
@@ -29,9 +16,6 @@
     --popover: #FFFFFF;
     --popover-foreground: #1F2933;
 
-    /* ===== Secondary Accent (Action & India Context) ===== */
-
-    /* Muted Saffron - CTAs, highlights, status indicators */
     --accent: #E67E22;
     --accent-foreground: #FFFFFF;
     --accent-light: #F39C12;
@@ -123,8 +107,6 @@
     --status-approved: #2E7D32;
     --status-rejected: #C62828;
 
-    /* ===== Legacy Color Variables (Backward Compatibility) ===== */
-    /* These ensure old CSS modules continue to work */
     --color-primary: var(--primary);
     --color-primary-dark: var(--primary-dark);
     --color-primary-light: var(--primary-light);

@@ -1,4 +1,4 @@
-# AI for Bharat - Jaansarthi
+ # #Jaansarthi
 
 A modern Next.js landing page application built with TypeScript.
 

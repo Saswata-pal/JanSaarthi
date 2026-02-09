@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,4 +7,126 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Add your models here
+model User {
+  id            String          @id @default(cuid())
+  name          String?
+  email         String          @unique
+  password      String?
+  emailVerified DateTime?
+  image         String?
+  isOnboarded   Boolean         @default(false)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  accounts      Account[]
+  DailyQuestion DailyQuestion[]
+  Roadmap       Roadmap[]
+  sessions      Session[]
+  UserProfile   UserProfile?
+  onboarding    Onboarding?
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model DailyQuestion {
+  id           String   @id
+  userId       String
+  questionText String
+  createdAt    DateTime @default(now())
+  expiresAt    DateTime
+  isAnswered   Boolean  @default(false)
+  User         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Project {
+  id          String  @id
+  title       String
+  description String
+  roadmapId   String
+  done        Boolean @default(false)
+  Roadmap     Roadmap @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+}
+
+model Roadmap {
+  id           String         @id
+  careerPath   String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime
+  userId       String
+  Project      Project[]
+  User         User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  SkillToLearn SkillToLearn[]
+}
+
+model SkillToLearn {
+  id        String  @id
+  skill     String
+  done      Boolean @default(false)
+  roadmapId String
+  Roadmap   Roadmap @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+}
+
+model UserProfile {
+  id                  String   @id
+  userId              String   @unique
+  education           String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime
+  activities          String[]
+  environment         String
+  learningStyles      String[]
+  situation           String
+  stream              String
+  tradeoff            String
+  uncertainty         String
+  knownCareer         String?
+  preferredIndustries String[]
+  User                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Onboarding {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  studentType String
+  income      String
+  age         Int
+  gender      String
+  caste       String?
+  reason      String?
+  
+  createdAt   DateTime @default(now())
+}
+

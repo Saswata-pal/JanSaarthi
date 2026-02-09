@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { Providers } from "./providers";
 import { PageLoadingWrapper } from "./components/ui/LoadingSpinner";
 import "./styles/globals.css";
+import "./styles/onboarding-styles.css";
 
 export const metadata: Metadata = {
-    title: "AI for Bharat - Jaansarthi",
-    description: "Modern landing page for AI for Bharat Jaansarthi platform",
+    title: "JanSaarthi",
+    description: "AI-powered platform for government services",
 };
 
 export default function RootLayout({
@@ -15,9 +17,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <PageLoadingWrapper>
-                    {children}
-                </PageLoadingWrapper>
+                <Providers>
+                    <PageLoadingWrapper>
+                        {children}
+                    </PageLoadingWrapper>
+                </Providers>
             </body>
         </html>
     );

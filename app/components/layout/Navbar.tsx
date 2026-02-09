@@ -14,8 +14,10 @@ import {
 } from "@/app/components/ui/ResizableNavbar";
 import { MovingBorderButton } from "@/app/components/ui/MovingBorder";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function JanSaarthiNavbar() {
+    const router = useRouter();
     const navItems: NavItem[] = [
         {
             name: "How It Works",
@@ -37,6 +39,16 @@ export default function JanSaarthiNavbar() {
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    const handleLogin = () => {
+        router.push("/auth/signin");
+        setIsMobileMenuOpen(false);
+    };
+
+    const handleGetStarted = () => {
+        router.push("/auth/signup");
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <Navbar>
             {/* Desktop Navigation */}
@@ -44,8 +56,18 @@ export default function JanSaarthiNavbar() {
                 <NavbarLogo />
                 <NavItems items={navItems} />
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <MovingBorderButton borderRadius="1.75rem">Login</MovingBorderButton>
-                    <MovingBorderButton borderRadius="1.75rem">Get Started</MovingBorderButton>
+                    <MovingBorderButton
+                        borderRadius="1.75rem"
+                        onClick={handleLogin}
+                    >
+                        Login
+                    </MovingBorderButton>
+                    <MovingBorderButton
+                        borderRadius="1.75rem"
+                        onClick={handleGetStarted}
+                    >
+                        Get Started
+                    </MovingBorderButton>
                 </div>
             </NavBody>
 
@@ -80,13 +102,13 @@ export default function JanSaarthiNavbar() {
                     }}>
                         <MovingBorderButton
                             borderRadius="1.75rem"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={handleLogin}
                         >
                             Login
                         </MovingBorderButton>
                         <MovingBorderButton
                             borderRadius="1.75rem"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={handleGetStarted}
                         >
                             Get Started
                         </MovingBorderButton>

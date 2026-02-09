@@ -11,7 +11,12 @@ import styles from './Hero.module.css';
 import cardStyles from '../ui/3DCard/ThreeDCard.module.css';
 import typewriterStyles from '../ui/TypewriterEffect/TypewriterEffect.module.css';
 
+import { useRouter } from 'next/navigation';
+
+
 export default function Hero() {
+    const router = useRouter();
+
     const headlineWords = [
         { text: "From" },
         { text: "Civic" },
@@ -37,10 +42,21 @@ export default function Hero() {
                         </p>
 
                         <div className={styles.hero__cta}>
-                            <Button variant="primary" size="lg">
+                            <Button
+                                variant="primary"
+                                size="lg"
+                                onClick={() => router.push('/auth/signup')}
+                            >
                                 Check What Applies to Me
                             </Button>
-                            <Button variant="outline" size="lg">
+                            <Button
+                                variant="outline"
+                                size="lg"
+                                onClick={() => {
+                                    const element = document.getElementById('how-it-works');
+                                    element?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                            >
                                 See How It Works
                             </Button>
                         </div>

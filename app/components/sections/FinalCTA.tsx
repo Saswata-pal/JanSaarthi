@@ -1,9 +1,14 @@
+'use client';
+
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import styles from './FinalCTA.module.css';
 
 export default function FinalCTA() {
+    const router = useRouter();
+
     return (
         <section className={styles.cta}>
             <Container>
@@ -17,10 +22,18 @@ export default function FinalCTA() {
                     </p>
 
                     <div className={styles.cta__actions}>
-                        <Button variant="primary" size="lg">
+                        <Button
+                            variant="primary"
+                            size="lg"
+                            onClick={() => router.push('/auth/signup')}
+                        >
                             Start with My Civic Profile
                         </Button>
-                        <Button variant="secondary" size="lg">
+                        <Button
+                            variant="secondary"
+                            size="lg"
+                            onClick={() => router.push('/auth/signin')}
+                        >
                             Explore Dashboard Demo
                         </Button>
                     </div>
@@ -50,3 +63,4 @@ export default function FinalCTA() {
         </section>
     );
 }
+

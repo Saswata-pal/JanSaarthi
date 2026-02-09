@@ -37,6 +37,7 @@ export default function ProfileForm() {
                 <option>Employee</option>
                 <option>Businessman</option>
                 <option>Unemployed</option>
+                <option>Farmer</option>
             </select>
 
             {/* Income */}
